@@ -69,7 +69,10 @@ const Sidebar = () => {
               </p>
             </div>
             <div
-              onClick={() => setShowLayer(!showLayer)}
+              onClick={() => {
+                setShowLayer(!showLayer);
+                setHide(true);
+              }}
               className={`flex gap-3 py-2 rounded-lg  hover:bg-[#FBFBFA] hover:text-primary-brand-400 text-xs items-center hover:cursor-pointer ${
                 hide ? "justify-center" : "pl-3"
               } ${showLayer ? "text-primary-brand-400" : ""}`}
@@ -116,16 +119,25 @@ const Sidebar = () => {
             </p>
           </div>
           <div
-            onClick={() => setHide(!hide)}
+            onClick={() => !showLayer && setHide(!hide)}
             className={`flex gap-3 py-2 rounded-lg  hover:bg-[#FBFBFA] hover:text-primary-brand-400 text-xs items-center  hover:cursor-pointer ${
               hide ? "justify-center" : "pl-3"
+            } ${
+              showLayer
+                ? "text-neutral-gray-400  hover:text-neutral-gray-400 hover:cursor-not-allowed"
+                : ""
             }`}
           >
-            {hide ? (
-              <IoChevronForwardCircleOutline className='w-5 h-5' />
-            ) : (
-              <IoChevronBackCircleOutline className='w-5 h-5' />
-            )}
+            <button
+              disabled={showLayer}
+              className='disabled:hover:cursor-not-allowed'
+            >
+              {hide ? (
+                <IoChevronForwardCircleOutline className='w-5 h-5' />
+              ) : (
+                <IoChevronBackCircleOutline className='w-5 h-5' />
+              )}
+            </button>
 
             <p
               className={`transition-opacity whitespace-nowrap ${
@@ -154,12 +166,18 @@ const Sidebar = () => {
         </div>
       </section>
       {/* Layer Management Sidebar */}
-      {showLayer && (
+      <div
+        className={
+          showLayer
+            ? "w-80 transition-all duration-600 ease-in-out"
+            : "w-0 transition-all duration-600 ease-in-out invisible"
+        }
+      >
         <LayerManagement
           showLayer={showLayer}
-          onClose={() => setShowLayer(false)}
+          onClose={() => setShowLayer(!showLayer)}
         />
-      )}
+      </div>
     </div>
   );
 };
