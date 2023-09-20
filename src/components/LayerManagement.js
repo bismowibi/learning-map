@@ -1,6 +1,6 @@
 import { IoClose, IoSearch } from "react-icons/io5";
 import { Accordion, Input, AccordionItem } from "@nextui-org/react";
-import LayerTitle from "./LayerTitle";
+import LayerCard from "./LayerCard";
 
 const LayerManagement = ({ onClose, showLayer }) => {
   return (
@@ -43,11 +43,11 @@ const LayerManagement = ({ onClose, showLayer }) => {
                 title='Data Layer 1'
               >
                 <div className='space-y-2'>
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
                 </div>
               </AccordionItem>
             </Accordion>
@@ -63,11 +63,11 @@ const LayerManagement = ({ onClose, showLayer }) => {
                 title='Data Layer 1'
               >
                 <div className='space-y-2'>
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
                 </div>
               </AccordionItem>
             </Accordion>
@@ -83,11 +83,11 @@ const LayerManagement = ({ onClose, showLayer }) => {
                 title='Data Layer 1'
               >
                 <div className='space-y-2'>
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
                 </div>
               </AccordionItem>
             </Accordion>
@@ -103,11 +103,11 @@ const LayerManagement = ({ onClose, showLayer }) => {
                 title='Data Layer 1'
               >
                 <div className='space-y-2'>
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
-                  <LayerTitle />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
+                  <LayerCard />
                 </div>
               </AccordionItem>
             </Accordion>
