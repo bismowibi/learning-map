@@ -12,9 +12,11 @@ import {
   IoChevronForwardCircleOutline,
 } from "react-icons/io5";
 
+import LayerManagement from "./LayerManagement";
+import MapTools from "./MapTools";
+
 import iconSmall from "@/assets/brg-icon.png";
 import iconLarge from "@/assets/brg-icon-large.png";
-import LayerManagement from "./LayerManagement";
 
 const Sidebar = () => {
   const [hide, setHide] = useState(true);
@@ -23,7 +25,7 @@ const Sidebar = () => {
   return (
     <div className='flex'>
       <section
-        className={`flex flex-col justify-between h-screen py-8 shadow-md ${
+        className={`flex flex-col justify-between h-screen py-8 shadow-lg bg-neutral-gray-50 ${
           hide
             ? "w-24 transition-all duration-300 ease-in-out"
             : "w-72 transition-all duration-300 ease-in-out"
@@ -178,6 +180,8 @@ const Sidebar = () => {
           onClose={() => setShowLayer(!showLayer)}
         />
       </div>
+      {/* Map Tools */}
+      <MapTools />
     </div>
   );
 };

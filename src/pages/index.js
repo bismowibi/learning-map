@@ -6,7 +6,7 @@ const Index = () => {
     <main>
       <div className='flex'>
         <Sidebar />
-        <div className='w-full bg-blue-400'>
+        <div className='absolute w-full h-full z-[-1] bg-blue-400'>
           <h1 className='text-center text-4xl mt-20'>Map</h1>
         </div>
       </div>

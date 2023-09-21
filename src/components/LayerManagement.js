@@ -5,7 +5,7 @@ import LayerCard from "./LayerCard";
 const LayerManagement = ({ onClose, showLayer }) => {
   return (
     <div
-      className={`py-12 px-4 text-neutral-gray-700 h-screen overflow-hidden`}
+      className={`py-12 px-4 bg-neutral-gray-50 rounded-tr-2xl rounded-br-2xl text-neutral-gray-700 h-screen overflow-hidden shadow-lg`}
     >
       {showLayer && (
         <section className='space-y-6'>
@@ -113,7 +113,6 @@ const LayerManagement = ({ onClose, showLayer }) => {
             </Accordion>
           </div>
           {/* Notice */}
-
           <div className='text-xs bg-neutral-gray-100 py-4 px-2 rounded-lg text-neutral-gray-500'>
             <p>
               About Data Layers The data layer list can be used to set the
