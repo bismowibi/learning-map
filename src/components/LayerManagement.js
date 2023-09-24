@@ -5,7 +5,7 @@ import LayerCard from "./LayerCard";
 const LayerManagement = ({ onClose, showLayer }) => {
   return (
     <div
-      className={`py-12 px-4 bg-neutral-gray-50 rounded-tr-2xl rounded-br-2xl text-neutral-gray-700 h-screen overflow-hidden shadow-lg`}
+      className={`py-12 px-4 bg-neutral-gray-50 rounded-tr-2xl text-neutral-gray-700 h-screen overflow-hidden shadow-lg`}
     >
       {showLayer && (
         <section className='space-y-6'>

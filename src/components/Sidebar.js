@@ -17,13 +17,16 @@ import MapTools from "./MapTools";
 
 import iconSmall from "@/assets/brg-icon.png";
 import iconLarge from "@/assets/brg-icon-large.png";
+import BottomDrawer from "./BottomDrawer";
 
 const Sidebar = () => {
   const [hide, setHide] = useState(true);
   const [showLayer, setShowLayer] = useState();
+  const [showDrawer, setShowDrawer] = useState();
+  const [maxHeight, setMaxHeight] = useState();
 
   return (
-    <div className='flex'>
+    <div className='flex w-full'>
       <section
         className={`flex flex-col justify-between h-screen py-8 shadow-lg bg-neutral-gray-50 ${
           hide
@@ -89,6 +92,7 @@ const Sidebar = () => {
               </p>
             </div>
             <div
+              onClick={() => setShowDrawer(!showDrawer)}
               className={`flex gap-3 py-2 rounded-lg  hover:bg-[#FBFBFA] hover:text-primary-brand-400 text-xs items-center  hover:cursor-pointer ${
                 hide ? "justify-center" : "pl-3"
               }`}
@@ -181,7 +185,25 @@ const Sidebar = () => {
         />
       </div>
       {/* Map Tools */}
-      <MapTools />
+      <div className='flex flex-col justify-between w-full'>
+        <MapTools maxHeight={maxHeight} />
+        <AnimatePresence>
+          {showDrawer && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <BottomDrawer
+                maxHeight={maxHeight}
+                setMaxHeight={setMaxHeight}
+                onClose={() => setShowDrawer(!showDrawer)}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
